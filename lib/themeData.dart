@@ -43,10 +43,11 @@ final sw50 = ScreenWidth * 0.5;
 final sw60 = ScreenWidth * 0.6;
 final sw70 = ScreenWidth * 0.7;
 final sw80 = ScreenWidth * 0.8;
+final sw85 = ScreenWidth * 0.85;
 final sw90 = ScreenWidth * 0.9;
 
-final sh20 = ScreenHeight * 0.1;
-final sh10 = ScreenHeight * 0.2;
+final sh10 = ScreenHeight * 0.1;
+final sh20 = ScreenHeight * 0.2;
 final sh30 = ScreenHeight * 0.3;
 final sh40 = ScreenHeight * 0.4;
 final sh50 = ScreenHeight * 0.5;

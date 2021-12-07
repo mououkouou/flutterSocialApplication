@@ -1,4 +1,4 @@
-import 'package:chapter10/Router/index.dart' as Router;
+import 'package:DiveSocialApp/Router/index.dart' as Router;
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 

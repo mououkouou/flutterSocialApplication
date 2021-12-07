@@ -1,6 +1,6 @@
-import 'package:chapter10/component/boxWidgetComponent.dart';
-import 'package:chapter10/component/profile.dart';
-import 'package:chapter10/themeData.dart';
+import 'package:DiveSocialApp/Component/boxWidgetComponent.dart';
+import 'package:DiveSocialApp/component/profile.dart';
+import 'package:DiveSocialApp/themeData.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -48,7 +48,9 @@ class AccountPage extends StatelessWidget {
               ],
             ),
           ),
-          buildBox(108, 30,
+          buildBox(
+              width: 108,
+              height: 30,
               boxDecoration: boxDecoration(backgroundColor: pointColor),
               widget: settingText(
                 'happy',

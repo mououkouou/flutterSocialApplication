@@ -1,4 +1,4 @@
-import 'package:chapter10/Views/coinPage.dart';
+import 'package:DiveSocialApp/Views/coinPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +28,7 @@ class _TabPageState extends State<TabPage> {
     super.initState();
     _pages = [
       HomePage(),
-      CoinPage(),
+      AccountPage(),
       AccountPage(),
       AccountPage(),
       CameraPage()

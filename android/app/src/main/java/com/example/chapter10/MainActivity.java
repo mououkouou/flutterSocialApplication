@@ -1,4 +1,4 @@
-package com.example.chapter10;
+package com.example.DiveSocialApp;
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity;

@@ -21,7 +21,7 @@ class RootPage extends StatelessWidget {
             return LoadingPage();
           } else {
 //
-            if (!snapshot.hasData) {
+            if (snapshot.hasData) {
               return TabPage(snapshot.data);
             }
             return LoginPage();

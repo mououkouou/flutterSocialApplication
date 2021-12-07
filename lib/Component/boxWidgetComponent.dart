@@ -1,8 +1,8 @@
-import 'package:chapter10/themeData.dart';
+import 'package:DiveSocialApp/themeData.dart';
 import 'package:flutter/material.dart';
 
-Widget buildBox(double width, double height,
-    {BoxDecoration boxDecoration, Widget widget}) {
+Widget buildBox(
+    {double width, double height, BoxDecoration boxDecoration, Widget widget}) {
   return Container(
     width: width,
     height: height,
@@ -10,7 +10,6 @@ Widget buildBox(double width, double height,
     decoration: boxDecoration,
   );
 }
-
 BoxDecoration boxDecoration(
     {double borderRadius = 15.0,
     BoxShadow boxShadow,
