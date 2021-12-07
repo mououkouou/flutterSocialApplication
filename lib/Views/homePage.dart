@@ -1,3 +1,4 @@
+import 'package:DiveSocialApp/Component/boxWidgetComponent.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,31 +17,47 @@ Widget _buildNoBody(context) {
   return Scaffold(
     backgroundColor: mainBackgroundColor,
     body: SafeArea(
-      child: Align(
-        alignment: Alignment.center,
-        child: Container(
-          color: mainColor,
-          margin: EdgeInsets.fromLTRB(
-              ScreenWidth * 0.075, ScreenWidth * 0.075, 0, 0),
-          child: Row(
-            children: [
-              Expanded(
-                flex: 70,
-                child: Align(
-                  alignment: Alignment.bottomLeft,
-                  child: _buildSearch(),
-                ),
-              ),
-              Expanded(
-                flex: 30,
-                child: buildProfileCircle(AssetImage('assets/liam.jpg'), 50),
-              ),
-            ],
+      child: Column(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.all(sw8),
+            child: buildSearch(),
           ),
-        ),
+          Container(
+            margin: EdgeInsets.only(left: sw8),
+            height: 200.0,
+            child: buildCountry(),
+          )
+        ],
       ),
     ),
   );
 }
 
-Widget _buildSearch() {}
+Widget buildSearch() {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      buildBox(
+          width: sw60 + sw3,
+          height: 50,
+          boxDecoration:
+              boxDecoration(borderRadius: 10.0, boxShadow: boxShadow()),
+          widget: TextField(
+            decoration: InputDecoration(
+                border: InputBorder.none,
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: defaultColor,
+                )),
+          )),
+      buildProfileCircle(AssetImage('assets/liam.jpg'), 50),
+    ],
+  );
+}
+
+Widget buildCountry() {
+  return ListView.builder(
+      scrollDirection: Axis.horizontal, itemBuilder: (context, index) {});
+}

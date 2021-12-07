@@ -1,4 +1,4 @@
-import 'package:chapter10/themeData.dart';
+import 'package:DiveSocialApp/themeData.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
