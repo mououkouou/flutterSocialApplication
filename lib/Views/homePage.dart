@@ -1,4 +1,4 @@
-import 'package:DiveSocialApp/Component/boxWidgetComponent.dart';
+import 'package:DiveSocialApp/Layout/boxWidgetComponent.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
