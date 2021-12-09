@@ -30,7 +30,7 @@ class SearchPage extends StatelessWidget {
             [
               Container
               ( 
-                padding: EdgeInsets.fromLTRB(0, 20, 20, 0),
+                padding: EdgeInsets.fromLTRB(0, sh4, sw7, 0),
                 child: _buildSearch(context),
               ),
               SizedBox(height: 12),
@@ -98,7 +98,7 @@ class SearchPage extends StatelessWidget {
       body: SafeArea(
         child: Container
         ( 
-          padding: EdgeInsets.fromLTRB(25, 25, 25, 0),
+          padding: EdgeInsets.fromLTRB(sw7, sh4, sw7, 0),
           child: 
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
