@@ -56,7 +56,7 @@ class _CreatePageState extends State<CreatePage> {
           onPressed: () {
             _uploadFile(context);
           },
-          child: Text('공유'),
+          child: Text('저장'),
         )
       ],
     );
@@ -163,11 +163,11 @@ class _CreatePageState extends State<CreatePage> {
 
   Widget _buildLocation() {
     final locationItems = [
-      '꿈두레 도서관',
-      '경기도 오산',
-      '오산세교',
-      '동탄2신도시',
-      '동탄',
+      '유림집',
+      '난화집',
+      '제주시 용담로',
+      '삼양해수욕장',
+      '이호해수욕장',
       '검색',
     ];
     return SizedBox(

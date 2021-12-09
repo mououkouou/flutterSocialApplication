@@ -1,8 +1,11 @@
-import 'package:DiveSocialApp/Views/postTabPage.dart';
+import 'package:DiveSocialApp/Views/createPage.dart';
+import 'package:DiveSocialApp/Views/feedWidget.dart';
+import 'package:DiveSocialApp/themeData.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import 'accountPage.dart';
+import 'cameraPage.dart';
+import 'searchPage.dart';
 import 'homePage.dart';
 
 class TabPage extends StatefulWidget {
@@ -16,55 +19,36 @@ class TabPage extends StatefulWidget {
 
 class _TabPageState extends State<TabPage> {
   int _selectedIndex = 0;
-
   List _pages;
-
-  Color gray = Color(0xFFCDCED0);
-  Color mint = Color(0xFF24E0E0);
 
   @override
   void initState() {
     super.initState();
     _pages = [
       HomePage(),
-      PostTabPage(),
-      AccountPage(),
+      SearchPage(),
+      CameraPage(),
+      CreatePage(),
       AccountPage(),
     ];
   }
 
   @override
   Widget build(BuildContext context) {
-    print('tab_page created');
     return Scaffold(
       body: _pages[_selectedIndex],
-      floatingActionButton: Container(
-        height: 65.0,
-        width: 65.0,
-        child: FittedBox(
-          child: FloatingActionButton(
-            backgroundColor: mint,
-            onPressed: () => _onItemTapped(4),
-            child: Icon(
-              Icons.camera_alt,
-              color: Colors.white,
-            ),
-          ),
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        shape: CircularNotchedRectangle(),
         child: Container(
-          height: 75,
+          height: 70,
           child: Row(
             mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              _bottomIconSetting(Icons.home, 0, 0.0, 28.0),
-              _bottomIconSetting(Icons.copyright, 1, 28.0, 0.0),
-              _bottomIconSetting(Icons.view_quilt, 2, 0.0, 28.0),
-              _bottomIconSetting(Icons.account_circle, 3, 28.0, 0.0)
+              _bottomIconSetting(Icons.roofing_rounded, 0),
+              _bottomIconSetting(Icons.search_outlined, 1,),
+              _bottomIconSetting(Icons.camera_alt_outlined, 2),
+              _bottomIconSetting(Icons.add_box_outlined, 3),
+              _bottomIconSetting(Icons.person_outline_outlined, 4)
             ],
           ),
         ),
@@ -79,14 +63,13 @@ class _TabPageState extends State<TabPage> {
   }
 
   Color _selectColor(int index) {
-    return _selectedIndex == index ? mint : gray;
+    return _selectedIndex == index ? defaultColor : lightGreyColor;
   }
 
   IconButton _bottomIconSetting(
-      IconData icon, int index, double right, double left) {
+      IconData icon, int index) {
     return IconButton(
-      iconSize: 30.0,
-      padding: EdgeInsets.only(right: right, left: left),
+      iconSize: 25.0,
       icon: Icon(
         icon,
         color: _selectColor(index),

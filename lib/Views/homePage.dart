@@ -15,7 +15,6 @@ class HomePage extends StatelessWidget {
 //데이터가 없을 때
 Widget _buildNoBody(context) {
   return Scaffold(
-    backgroundColor: mainBackgroundColor,
     body: SafeArea(
       child: Column(
         children: <Widget>[

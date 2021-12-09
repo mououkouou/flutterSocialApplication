@@ -10,6 +10,7 @@ const boxTextColor = Color(0xFF3B3838); // 배경 main or point 사용된 박스
 const whiteColor = Color(0xFFFFFFFF);
 const defaultColor = Color(0xFF000000);
 const greyColor = Color(0xFF7A7A7A);
+const lightGreyColor = Color(0xFFCECECE);
 // background - Main화면, 코인화면,
 const mainBackgroundColor = Color(0xFFF0EFF0);
 // background - 포스트화면
@@ -62,13 +63,13 @@ final sh90 = ScreenHeight * 0.9;
 TextStyle titleTextStyle(Color color) {
   return GoogleFonts.poppins(
       textStyle:
-          TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: color));
+          TextStyle(fontSize: 28, fontWeight: FontWeight.w400, color: color));
 }
 
 TextStyle subTextStyle(Color color) {
   return GoogleFonts.poppins(
       textStyle:
-          TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: color));
+          TextStyle(fontSize: 16, fontWeight: FontWeight.w300, color: color));
 }
 
 TextStyle highlightTextStyle(Color color) {
