@@ -1,5 +1,5 @@
 import 'package:DiveSocialApp/Layout/boxWidgetComponent.dart';
-import 'package:DiveSocialApp/Layout/profile.dart';
+import 'package:DiveSocialApp/Layout/profileComponent.dart';
 import 'package:DiveSocialApp/themeData.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -139,21 +139,17 @@ class _AccountPageState extends State<AccountPage> with SingleTickerProviderStat
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: 
                       [
-                        buildBox
+                        smallBorderBox
                         (
-                          width: 108,
+                          settingText
+                            (
+                              profileMood[0],
+                              color: mainColor,
+                              weight: FontWeight.w500,
+                            ),
+                          width:108,
                           height: 30,
-                          boxDecoration: BoxDecoration( borderRadius: BorderRadius.circular(10),
-                                            border: Border.all(color: mainColor,width: 1.0)),
-                          widget: Align
-                                      (
-                                        child: settingText
-                                        (
-                                          profileMood[0],
-                                          color: mainColor,
-                                          weight: FontWeight.w500,
-                                        ),
-                                      )
+                          color: mainColor
                         ),
                         profileMood.length >= 2 ?   
                         Row
@@ -161,22 +157,18 @@ class _AccountPageState extends State<AccountPage> with SingleTickerProviderStat
                           children:
                           [
                             SizedBox(width: sw2),
-                            buildBox
-                              (
-                                width: 108,
-                                height: 30,
-                                boxDecoration: BoxDecoration( borderRadius: BorderRadius.circular(10),
-                                            border: Border.all(color: mainColor,width: 1.0)),
-                                widget: Align
-                                        (
-                                          child: settingText
-                                                  (
-                                                    profileMood[1],
-                                                    color: mainColor,
-                                                    weight: FontWeight.w500,
-                                                  ),        
-                                        )
-                              )
+                            smallBorderBox
+                            (
+                              settingText
+                                (
+                                  profileMood[1],
+                                  color: mainColor,
+                                  weight: FontWeight.w500,
+                                ),
+                              width:108,
+                              height: 30,
+                              color: mainColor
+                            )
                           ]
                         )
                         :
