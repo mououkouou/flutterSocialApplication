@@ -1,4 +1,5 @@
 import 'package:DiveSocialApp/Layout/boxWidgetComponent.dart';
+import 'package:DiveSocialApp/Layout/postComponent.dart';
 import 'package:DiveSocialApp/Layout/profile.dart';
 import 'package:DiveSocialApp/Views/postPage.dart';
 import 'package:flutter/material.dart';

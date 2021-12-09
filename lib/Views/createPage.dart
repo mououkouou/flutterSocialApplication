@@ -1,6 +1,4 @@
 import 'dart:io';
-
-import 'package:DiveSocialApp/Layout/backgroundBox.dart';
 import 'package:DiveSocialApp/Layout/boxWidgetComponent.dart';
 import 'package:DiveSocialApp/themeData.dart';
 import 'package:flutter/cupertino.dart';

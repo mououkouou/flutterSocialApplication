@@ -3,9 +3,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 //ColorData
-const mainColor = Color(0xFFFFFFCC); //연한색
-const pointColor = Color(0xFFE4D9A7); //진한색
-const boxTextColor = Color(0xFF3B3838); // 배경 main or point 사용된 박스에 들어갈 글자색
+const mainColor = Color(0xFF1D315B); //연한색
+const boxTextColor = Color(0xFF686868); // 배경 main or point 사용된 박스에 들어갈 글자색
 
 const whiteColor = Color(0xFFFFFFFF);
 const defaultColor = Color(0xFF000000);

@@ -40,6 +40,13 @@ class PostPage extends StatelessWidget {
               fit: BoxFit.cover,
             ),
         ),
+        buildBackgroundBox(
+          margin: EdgeInsets.only(top: sh20),
+          widget: 
+             Container(
+              color: whiteColor,
+             ),
+        ),
       ],
     );
   }
@@ -56,7 +63,19 @@ class PostPage extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              profileName(profileComponent(AssetImage('assets/diver.jpg'),size: 40,), 'Liam', 'photographer'),
+              Row(
+                children: [
+                  profileComponent(AssetImage('assets/diver.jpg'),size: 40,),
+                  SizedBox(width: 20),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      settingText('Liam', size: 16, weight: FontWeight.w600, align: TextAlign.start),
+                      settingText('photographer', size: 13, color: greyColor, align: TextAlign.start)
+                    ],
+                  )
+                ],
+              ),
               SizedBox(height: 20),
               settingText("My first Diving picture!\nWhat a wonderful! XD"),
               SizedBox(height: 10),
@@ -112,4 +131,6 @@ class PostPage extends StatelessWidget {
       ),
     );
   }
+
+
 }

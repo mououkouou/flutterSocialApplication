@@ -53,7 +53,7 @@ class _AccountPageState extends State<AccountPage> with SingleTickerProviderStat
               SliverAppBar
               (
                 flexibleSpace: FlexibleSpaceBar(background: _buildProfile()),
-                expandedHeight: 240+sh10+sh4,
+                expandedHeight: 255+sh10+sh4,
                 pinned: true,
                 floating: true,
                 forceElevated: innerBoxIsScrolled,
@@ -65,10 +65,10 @@ class _AccountPageState extends State<AccountPage> with SingleTickerProviderStat
                             Tab(text: '30 Liked',)
                           ],
                           labelColor: defaultColor,
-                          labelStyle: GoogleFonts.poppins(textStyle: TextStyle(fontSize: 17, fontWeight: FontWeight.w600)),
+                          labelStyle: GoogleFonts.poppins(textStyle: TextStyle(fontSize: 17, fontWeight: FontWeight.w400)),
                           indicatorSize: TabBarIndicatorSize.label,
                           indicatorWeight: 4.0,
-                          indicatorColor: pointColor,
+                          indicatorColor: mainColor,
                           unselectedLabelColor: greyColor,
                           controller: _tabController
                         ),
@@ -103,7 +103,7 @@ class _AccountPageState extends State<AccountPage> with SingleTickerProviderStat
                 (
                   boxShadow: boxShadow
                   (
-                    boxShadowColor: greyColor,
+                    boxShadowColor: mainColor,
                     offsetX: 0,
                     offsetY: 0,       
                   )
@@ -143,14 +143,15 @@ class _AccountPageState extends State<AccountPage> with SingleTickerProviderStat
                         (
                           width: 108,
                           height: 30,
-                          boxDecoration: boxDecoration(backgroundColor: mainColor,borderRadius: 8.0),
+                          boxDecoration: BoxDecoration( borderRadius: BorderRadius.circular(10),
+                                            border: Border.all(color: mainColor,width: 1.0)),
                           widget: Align
                                       (
                                         child: settingText
                                         (
                                           profileMood[0],
-                                          color: boxTextColor,
-                                          weight: FontWeight.w700,
+                                          color: mainColor,
+                                          weight: FontWeight.w500,
                                         ),
                                       )
                         ),
@@ -164,14 +165,15 @@ class _AccountPageState extends State<AccountPage> with SingleTickerProviderStat
                               (
                                 width: 108,
                                 height: 30,
-                                boxDecoration: boxDecoration(backgroundColor: mainColor,borderRadius: 8.0),
+                                boxDecoration: BoxDecoration( borderRadius: BorderRadius.circular(10),
+                                            border: Border.all(color: mainColor,width: 1.0)),
                                 widget: Align
                                         (
                                           child: settingText
                                                   (
                                                     profileMood[1],
-                                                    color: boxTextColor,
-                                                    weight: FontWeight.w700,
+                                                    color: mainColor,
+                                                    weight: FontWeight.w500,
                                                   ),        
                                         )
                               )
@@ -191,7 +193,7 @@ class _AccountPageState extends State<AccountPage> with SingleTickerProviderStat
                           Expanded(
                             child: Column(
                               children: [
-                                settingText('1.2K', size: 15, weight: FontWeight.w700),
+                                settingText('1.2K', size: 15, weight: FontWeight.w500),
                                 settingText('Likes', size: 11, color: greyColor)
                               ],
                             ),
@@ -199,7 +201,7 @@ class _AccountPageState extends State<AccountPage> with SingleTickerProviderStat
                           Expanded(
                             child: Column(
                               children: [
-                                settingText('107', size: 15, weight: FontWeight.w700),
+                                settingText('107', size: 15, weight: FontWeight.w500),
                                 settingText('Followers', size: 11, color: greyColor)
                               ],
                             ),
@@ -207,7 +209,7 @@ class _AccountPageState extends State<AccountPage> with SingleTickerProviderStat
                           Expanded(
                             child: Column(
                               children: [
-                                settingText('115', size: 15, weight: FontWeight.w700),
+                                settingText('115', size: 15, weight: FontWeight.w500),
                                 settingText('Followings', size: 11, color: greyColor)
                               ],
                             ),
