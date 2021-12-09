@@ -1,5 +1,7 @@
 import 'package:DiveSocialApp/Views/createPage.dart';
+import 'package:DiveSocialApp/Views/detailPostPage.dart';
 import 'package:DiveSocialApp/Views/feedWidget.dart';
+import 'package:DiveSocialApp/Views/postPage.dart';
 import 'package:DiveSocialApp/themeData.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

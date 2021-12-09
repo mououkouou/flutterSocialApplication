@@ -1,11 +1,11 @@
-import 'package:DiveSocialApp/Component/boxWidgetComponent.dart';
+import 'package:DiveSocialApp/Layout/boxWidgetComponent.dart';
 import 'package:DiveSocialApp/themeData.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 class SearchPage extends StatelessWidget {
   final document = {
-    'nickname': 'Angella',
+    'nickname': 'Liam',
   };
 
   RxBool texting = false.obs;
@@ -72,7 +72,7 @@ class SearchPage extends StatelessWidget {
               ),
               Expanded(
                 child: Container(
-                  padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                  padding: EdgeInsets.fromLTRB(25, 25, 25, 0),
                   child: TabBarView(children: [
                     Container(
                       child: _buildSearchListView(context),
@@ -98,7 +98,7 @@ class SearchPage extends StatelessWidget {
       body: SafeArea(
         child: Container
         ( 
-          padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+          padding: EdgeInsets.fromLTRB(25, 25, 25, 0),
           child: 
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -190,12 +190,6 @@ class SearchPage extends StatelessWidget {
 }
 
 Widget _buildSearchListView(context){
-  // final Map<String, String> account = {
-  //   'name': 'dora',
-  //   'name': 'dora',
-  //   {'name': 'dora'},
-  //   {'name': 'dora'},
-  // };
   final List account = ['dora','heesu'];
   return ListView.separated(
           separatorBuilder: (context, index){

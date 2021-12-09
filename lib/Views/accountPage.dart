@@ -222,7 +222,7 @@ class _AccountPageState extends State<AccountPage> with SingleTickerProviderStat
             ],
           ),
         ),
-        Center(child: profileComponent(AssetImage('assets/diver.jpg'),size: 80)),
+        Center(child: profileComponent(AssetImage('assets/diver.jpg'), size: 80)),
       ]),
     );
   }

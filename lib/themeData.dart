@@ -15,6 +15,7 @@ const lightGreyColor = Color(0xFFCECECE);
 const mainBackgroundColor = Color(0xFFF0EFF0);
 // background - 포스트화면
 const subBackgroundColor = Color(0xFFEEF2F5);
+const heartColor = Color(0xFFFF8E8E);
 
 //width,height Data
 final sw1 = ScreenWidth * 0.01;
