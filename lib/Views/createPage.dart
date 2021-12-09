@@ -174,7 +174,8 @@ class _CreatePageState extends State<CreatePage> {
       height: 34.0,
       child: ListView(
         scrollDirection: Axis.horizontal,
-        children: locationItems.map((location) {
+        children: locationItems.map(
+          (location) {
           return Padding(
             padding: const EdgeInsets.only(left: 8.0),
             child: Chip(

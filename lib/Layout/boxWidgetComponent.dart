@@ -17,7 +17,7 @@ BoxDecoration boxDecoration(
   return BoxDecoration(
       color: backgroundColor,
       borderRadius: BorderRadius.circular(borderRadius),
-      boxShadow: [boxShadow]);
+      boxShadow: boxShadow != null ? [boxShadow] : []);
 }
 
 BoxShadow boxShadow(

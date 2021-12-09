@@ -19,12 +19,12 @@ Column profileComponent(AssetImage image,
           ),
         ),
       ),
-      // Padding(
-      //   padding: EdgeInsets.all(padding),
-      // ),
       name == null
           ? Container()
-          : settingText(name, weight: FontWeight.w600, size: 16)
+          : Padding(
+            padding: EdgeInsets.only(top:sh2),
+            child: settingText(name, weight: FontWeight.w600, size: 16),
+          )
     ],
   );
 }
