@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 class DetailPostPage extends StatelessWidget {
   final document = {
     'userPhotoUrl': '',
+    'photoUrl' : '',
     'email': 'metabusx@gamail.com',
     'displayName': ' 김인섭',
+    'contents':'gg',
   };
-//  final FirebaseUser user;
-
-//  DetailPostPage({this.document, this.user});
 
   @override
   Widget build(BuildContext context) {
