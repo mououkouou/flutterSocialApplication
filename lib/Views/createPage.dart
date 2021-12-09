@@ -95,7 +95,7 @@ class _CreatePageState extends State<CreatePage> {
                       [
                         Container(
                           padding: EdgeInsets.fromLTRB(15.0, 0, 15.0, 0),
-                          height: sh20+sh5,
+                          height: sh20 + sh5,
                           decoration: BoxDecoration
                                           (
                                             borderRadius: BorderRadius.circular(10),
