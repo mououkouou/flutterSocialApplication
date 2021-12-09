@@ -40,7 +40,7 @@ BoxShadow boxShadow(
 }
 
 
-Widget buildBackgroundBox({Widget widget,EdgeInsets padding, EdgeInsets margin})
+Container buildBackgroundBox({Widget widget,EdgeInsets padding, EdgeInsets margin})
 {
   return Container
   (
@@ -53,5 +53,35 @@ Widget buildBackgroundBox({Widget widget,EdgeInsets padding, EdgeInsets margin})
       borderRadius: BorderRadius.only(topLeft: Radius.circular(13), topRight: Radius.circular(13))
     ),
     child: widget == null ? Container() : widget,
+  );
+}
+
+Container smallFillBox(Widget text,{double width, double height,Color color = whiteColor})
+{
+  return Container
+  (
+    width: width,
+    height: height,
+    decoration: BoxDecoration
+    (
+      color: color,
+      borderRadius: BorderRadius.all(Radius.circular(13))
+    ),
+    child: Center(child: text),
+  );
+}
+
+Container smallBorderBox(Widget text,{double width, double height,Color color = whiteColor})
+{
+  return Container
+  (
+    width: width,
+    height: height,
+    decoration: BoxDecoration
+    (
+      border: Border.all(color: color,width: 1.0),
+      borderRadius: BorderRadius.all(Radius.circular(13))
+    ),
+    child: Center(child: text),
   );
 }

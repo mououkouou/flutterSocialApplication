@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:DiveSocialApp/Layout/boxWidgetComponent.dart';
+import 'package:DiveSocialApp/Layout/commonComponent.dart';
 import 'package:DiveSocialApp/themeData.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +49,9 @@ class _CreatePageState extends State<CreatePage> {
     return Scaffold(
       backgroundColor: mainBackgroundColor,
       appBar: _buildAppBar(context),
-      body: _buildBody(),
+      body: keyboardDown(
+        context: context,
+        child: _buildBody()),
     );
   }
 
@@ -95,26 +98,70 @@ class _CreatePageState extends State<CreatePage> {
                       [
                         Container(
                           padding: EdgeInsets.fromLTRB(15.0, 0, 15.0, 0),
-                          height: sh20 + sh5,
+                          height: sh20+sh5+10,
                           decoration: BoxDecoration
                                           (
                                             borderRadius: BorderRadius.circular(10),
                                             border: Border.all(color: Colors.black12,width: 1.0)
                                             ),
-                          child: TextField
-                          (
-                          maxLines: null,
-                          controller: textEditingController,
-                          decoration: InputDecoration
-                            (
-                              border: InputBorder.none,
-                              labelText: 'Write content',
-                            ),
+                          child: Column(
+                            children: [
+                              Container(
+                                height: sh20,
+                                child: TextField
+                                (
+                                maxLines: null,
+                                controller: textEditingController,
+                                decoration: InputDecoration
+                                  (
+                                    border: InputBorder.none,
+                                    hintText: 'Write content',
+                                    hintStyle: TextStyle
+                                    (
+                                      color: boxTextColor
+                                    )
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment.bottomLeft,
+                                child: smallFillBox
+                                  (settingText
+                                    (
+                                      '#hasTag',
+                                      color: greyColor,
+                                      size: 13,
+                                      weight: FontWeight.w600
+                                    ),
+                                    width: 95.0,
+                                    height: sh4,
+                                    color: brightGreyColor,
+                              
+                                  ),
+                              )
+                            ],
                           ),
                         ),
-                        ListTile
+                        SizedBox(height: sh3,),
+                        smallFillBox
                         (
-                          leading: Text('사람 태그하기'),
+                         Row
+                         (
+                           children: 
+                           [
+                             Row
+                             (
+                               children: 
+                               [
+                                 settingText
+                                 (
+                                   'GPS',
+                                   color: mainColor
+                                  )
+                               ],
+                              )
+                           ],
+                           )
                         ),
                         Divider(),
                         ListTile(
@@ -165,20 +212,23 @@ class _CreatePageState extends State<CreatePage> {
   }
 
   Widget _buildImage() {
-    return _image == null
-        ? Container
-        (
-          color: mainBackgroundColor,
-          width:ScreenWidth,
-          height: sh30,
-          child: Image(image: AssetImage('assets/plus.png'),)
-        )
-        : Image.file(
-            _image,
-            width: ScreenWidth,
+    return Padding(
+      
+      padding: EdgeInsets.fromLTRB(0, sh3, 0, sh3),
+      child: _image == null
+          ? Container
+          (
+            width:ScreenWidth,
             height: sh30,
-            fit: BoxFit.contain,
-          );
+            child: Image(image: AssetImage('assets/plus.png'),)
+          )
+          : Image.file(
+              _image,
+              width: ScreenWidth,
+              height: sh30,
+              fit: BoxFit.contain,
+            ),
+    );
   }
 
   Widget _buildLocation() {
