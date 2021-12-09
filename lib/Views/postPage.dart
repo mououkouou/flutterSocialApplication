@@ -1,6 +1,5 @@
 import 'package:DiveSocialApp/Layout/boxWidgetComponent.dart';
-import 'package:DiveSocialApp/Layout/postComponent.dart';
-import 'package:DiveSocialApp/Layout/profile.dart';
+import 'package:DiveSocialApp/Layout/profileComponent.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';

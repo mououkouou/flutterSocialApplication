@@ -4,14 +4,15 @@ import 'package:google_fonts/google_fonts.dart';
 
 //ColorData
 const mainColor = Color(0xFF1D315B); //연한색
-const boxTextColor = Color(0xFF686868); // 배경 main or point 사용된 박스에 들어갈 글자색
+const boxTextColor = Color(0xFFD9D9D9); // 배경 main or point 사용된 박스에 들어갈 글자색
 
 const whiteColor = Color(0xFFFFFFFF);
+const brightGreyColor = Color(0xFFF0EFF0);
 const defaultColor = Color(0xFF000000);
 const greyColor = Color(0xFF7A7A7A);
 const lightGreyColor = Color(0xFFCECECE);
 // background - Main화면, 코인화면,
-const mainBackgroundColor = Color(0xFFF0EFF0);
+const mainBackgroundColor = Color(0xFFF2F4F7);
 // background - 포스트화면
 const subBackgroundColor = Color(0xFFEEF2F5);
 const heartColor = Color(0xFFFF8E8E);

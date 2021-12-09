@@ -29,6 +29,25 @@ Column profileComponent(AssetImage image,
   );
 }
 
+Widget profileName(
+  Widget profile, String name, String job
+) {
+  return 
+    Row(
+      children: [
+        profile,
+        SizedBox(width: 20),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            settingText(name, size: 16, weight: FontWeight.w600, align: TextAlign.start),
+            settingText(job, size: 13, color: greyColor, align: TextAlign.start)
+          ],
+        )
+      ],
+    );
+}
+
 void moveOtherProfile() {
   Get.toNamed('/account');
 }
