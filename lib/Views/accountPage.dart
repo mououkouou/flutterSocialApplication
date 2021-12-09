@@ -53,7 +53,7 @@ class _AccountPageState extends State<AccountPage> with SingleTickerProviderStat
               SliverAppBar
               (
                 flexibleSpace: FlexibleSpaceBar(background: _buildProfile()),
-                expandedHeight: 255+sh10+sh4,
+                expandedHeight: 255+ sh10+ sh4,
                 pinned: true,
                 floating: true,
                 forceElevated: innerBoxIsScrolled,
@@ -122,7 +122,7 @@ class _AccountPageState extends State<AccountPage> with SingleTickerProviderStat
                           children: [
                             Padding
                             (
-                              padding: EdgeInsets.only(top:40+sh2),
+                              padding: EdgeInsets.only(top:40 + sh2),
                               child: settingText('Liam', weight: FontWeight.w600, size: 16),
                             ),
                             Text

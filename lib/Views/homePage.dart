@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: Container
         ( 
-          padding: EdgeInsets.fromLTRB(25, 25, 25, 0),
+          padding: EdgeInsets.fromLTRB(sw7, sh4, sw7, 0),
           child: 
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

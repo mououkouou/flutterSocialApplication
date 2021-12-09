@@ -156,7 +156,7 @@ class _CreatePageState extends State<CreatePage> {
                                  settingText
                                  (
                                    'GPS',
-                                   color: 
+                                   color: mainColor
                                   )
                                ],
                               )
