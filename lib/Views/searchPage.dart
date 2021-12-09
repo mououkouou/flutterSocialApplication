@@ -1,4 +1,4 @@
-import 'package:DiveSocialApp/Component/boxWidgetComponent.dart';
+import 'package:DiveSocialApp/LayOut/boxWidgetComponent.dart';
 import 'package:DiveSocialApp/themeData.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
