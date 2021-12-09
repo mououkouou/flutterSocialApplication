@@ -23,8 +23,8 @@ BoxDecoration boxDecoration(
 BoxShadow boxShadow(
     {Color boxShadowColor = greyColor,
     double spreadRadius = 0.5,
-    double blurRadius = 2,
-    double offsetX = 3,
+    double blurRadius = 6,
+    double offsetX = 0,
     double offsetY = 3,
     double opacity = 0.2}) {
   return BoxShadow(

@@ -10,10 +10,6 @@ class FeedWidget extends StatefulWidget {
     'comment': 100,
   };
 
-//  final FirebaseUser user;
-
-//  FeedWidget(this.document, this.user);
-
   @override
   _FeedWidgetState createState() => _FeedWidgetState();
 }
