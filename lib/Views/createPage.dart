@@ -1,7 +1,11 @@
 import 'dart:io';
 
+import 'package:DiveSocialApp/Layout/backgroundBox.dart';
+import 'package:DiveSocialApp/Layout/boxWidgetComponent.dart';
+import 'package:DiveSocialApp/themeData.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 class CreatePage extends StatefulWidget {
@@ -25,6 +29,7 @@ class _CreatePageState extends State<CreatePage> {
   @override
   void dispose() {
     textEditingController.dispose();
+    _image = null;
     super.dispose();
   }
 
@@ -43,6 +48,7 @@ class _CreatePageState extends State<CreatePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: mainBackgroundColor,
       appBar: _buildAppBar(context),
       body: _buildBody(),
     );
@@ -50,13 +56,13 @@ class _CreatePageState extends State<CreatePage> {
 
   Widget _buildAppBar(BuildContext context) {
     return AppBar(
-      title: Text('새 게시물'),
+      title: Image(image: AssetImage('assets/ic_arrow_back.png'),),
       actions: <Widget>[
         TextButton(
           onPressed: () {
             _uploadFile(context);
           },
-          child: Text('저장'),
+          child: settingText('Done',size: 15.0, weight: FontWeight.bold),
         )
       ],
     );
@@ -74,77 +80,87 @@ class _CreatePageState extends State<CreatePage> {
     // 문서 작성
 
     // 완료 후 앞 화면으로 이동
-    Navigator.pop(context);
+    Get.back();
   }
 
   Widget _buildBody() {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: <Widget>[
                 _buildImage(),
-                SizedBox(
-                  width: 8.0,
-                ),
-                Expanded(
-                  child: TextField(
-                    controller: textEditingController,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      labelText: '문구 입력...',
+                buildBackgroundBox
+                (
+                  padding : EdgeInsets.fromLTRB(sw7, sh5, sw7, sh5),
+                  widget: Column
+                    (
+                      children:
+                      [
+                        Container(
+                          padding: EdgeInsets.fromLTRB(15.0, 0, 15.0, 0),
+                          height: sh20+sh5,
+                          decoration: BoxDecoration
+                                          (
+                                            borderRadius: BorderRadius.circular(10),
+                                            border: Border.all(color: Colors.black12,width: 1.0)
+                                            ),
+                          child: TextField
+                          (
+                          maxLines: null,
+                          controller: textEditingController,
+                          decoration: InputDecoration
+                            (
+                              border: InputBorder.none,
+                              labelText: 'Write content',
+                            ),
+                          ),
+                        ),
+                        ListTile
+                        (
+                          leading: Text('사람 태그하기'),
+                        ),
+                        Divider(),
+                        ListTile(
+                          leading: Text('위치 추가하기'),
+                        ),
+                        Divider(),
+                        _buildLocation(),
+                        ListTile(
+                          leading: Text('위치 추가하기'),
+                        ),
+                        ListTile(
+                          leading: Text('Facebook'),
+                          trailing: Switch(
+                            value: false,
+                            onChanged: (bool value) {},
+                          ),
+                        ),
+                        ListTile(
+                          leading: Text('Twitter'),
+                          trailing: Switch(
+                            value: false,
+                            onChanged: (bool value) {},
+                          ),
+                        ),
+                        ListTile(
+                          leading: Text('Tumblr'),
+                          trailing: Switch(
+                            value: false,
+                            onChanged: (bool value) {},
+                          ),
+                        ),
+                        Divider(),
+                        ListTile(
+                          leading: Text(
+                            '고급 설정',
+                            style: TextStyle(
+                              fontSize: 12.0,
+                              color: Colors.grey[800],
+                            ),
+                          ),
+                        ),
+                      ]
                     ),
-                  ),
-                )
-              ],
-            ),
-          ),
-          Divider(),
-          ListTile(
-            leading: Text('사람 태그하기'),
-          ),
-          Divider(),
-          ListTile(
-            leading: Text('위치 추가하기'),
-          ),
-          Divider(),
-          _buildLocation(),
-          ListTile(
-            leading: Text('위치 추가하기'),
-          ),
-          ListTile(
-            leading: Text('Facebook'),
-            trailing: Switch(
-              value: false,
-              onChanged: (bool value) {},
-            ),
-          ),
-          ListTile(
-            leading: Text('Twitter'),
-            trailing: Switch(
-              value: false,
-              onChanged: (bool value) {},
-            ),
-          ),
-          ListTile(
-            leading: Text('Tumblr'),
-            trailing: Switch(
-              value: false,
-              onChanged: (bool value) {},
-            ),
-          ),
-          Divider(),
-          ListTile(
-            leading: Text(
-              '고급 설정',
-              style: TextStyle(
-                fontSize: 12.0,
-                color: Colors.grey[800],
-              ),
-            ),
-          ),
+                ),
         ],
       ),
     );
@@ -152,12 +168,18 @@ class _CreatePageState extends State<CreatePage> {
 
   Widget _buildImage() {
     return _image == null
-        ? Text('No Image')
+        ? Container
+        (
+          color: mainBackgroundColor,
+          width:ScreenWidth,
+          height: sh30,
+          child: Image(image: AssetImage('assets/plus.png'),)
+        )
         : Image.file(
             _image,
-            width: 50,
-            height: 50,
-            fit: BoxFit.cover,
+            width: ScreenWidth,
+            height: sh30,
+            fit: BoxFit.contain,
           );
   }
 
