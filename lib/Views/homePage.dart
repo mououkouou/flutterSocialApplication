@@ -50,7 +50,6 @@ class HomePage extends StatelessWidget {
                               child: 
                                  DropdownButton<String>(
                                   value: _selectedValue.value,
-                                  elevation: 30,
                                   style: GoogleFonts.poppins(
                                         textStyle: TextStyle(fontSize: 13, color: greyColor)
                                   ),
