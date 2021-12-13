@@ -71,16 +71,17 @@ Container smallFillBox(Widget widget,{double width, double height,Color color = 
   );
 }
 
-Container smallBorderBox(Widget text,{double width, double height,Color color = whiteColor})
+Container smallBorderBox(Widget text,{EdgeInsets padding, double width, double height,Color color = whiteColor, double radius = 13.0})
 {
   return Container
   (
     width: width,
     height: height,
+    padding: padding,
     decoration: BoxDecoration
     (
       border: Border.all(color: color,width: 1.0),
-      borderRadius: BorderRadius.all(Radius.circular(13))
+      borderRadius: BorderRadius.all(Radius.circular(radius))
     ),
     child: Center(child: text),
   );

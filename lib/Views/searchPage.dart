@@ -1,4 +1,5 @@
 import 'package:DiveSocialApp/Layout/boxWidgetComponent.dart';
+import 'package:DiveSocialApp/Layout/commonComponent.dart';
 import 'package:DiveSocialApp/themeData.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,8 +15,13 @@ class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Obx(()=> 
-        texting.value? _buildSearchTrue(context) : _buildSearchFalse(context)
+      body: 
+        keyboardDown(
+          context: context,
+          child: 
+            Obx(()=> 
+            texting.value? _buildSearchTrue(context) : _buildSearchFalse(context)
+        ),
       ) ,
     );
   }

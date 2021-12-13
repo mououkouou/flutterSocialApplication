@@ -30,12 +30,12 @@ Column profileComponent(AssetImage image,
 }
 
 Widget profileName(
-  Widget profile, String name, String job
+  AssetImage assetImage, String name, String job
 ) {
   return 
     Row(
       children: [
-        profile,
+        profileComponent(assetImage, size: 40),
         SizedBox(width: 20),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,

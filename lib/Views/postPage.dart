@@ -1,4 +1,5 @@
 import 'package:DiveSocialApp/Layout/boxWidgetComponent.dart';
+import 'package:DiveSocialApp/Layout/postComponent.dart';
 import 'package:DiveSocialApp/Layout/profileComponent.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,7 +12,6 @@ class PostPage extends StatelessWidget {
     'nickname': 'Liam',
   };
   RxBool _showDetail = false.obs;
-  RxBool _showMenu = false.obs;
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +31,9 @@ class PostPage extends StatelessWidget {
     return Stack(
       children: 
       [
-        GestureDetector(
+        InkWell(
           onTap: () {
+            
             _showDetail.value = true;
           },
           child:
@@ -43,7 +44,7 @@ class PostPage extends StatelessWidget {
               Image(
                 image: AssetImage('assets/postSampleImage2.jpg'),
                 fit: BoxFit.cover,
-              ),
+              ),  
           ),
         ),
         SingleChildScrollView(
@@ -57,22 +58,19 @@ class PostPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        children: [
-                          profileComponent(AssetImage('assets/diver.jpg'), size: 40),
-                          SizedBox(width: 20),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              settingText('Liam', size: 16, weight: FontWeight.w600, align: TextAlign.start),
-                              settingText('photographer', size: 13, color: greyColor, align: TextAlign.start)
-                            ],
-                          )
-                        ],
-                      ),
+                        profileName(AssetImage('assets/diver.jpg'), "Liam", "photographer"),
+                        Row(
+                          children: [
+                            SizedBox(width: 10),
+                            smallBorderBox(
+                              settingText("follow", color: mainColor, size: 12),
+                              color: mainColor,
+                              padding: EdgeInsets.fromLTRB(5, 2, 5, 2),
+                              radius: 20),
+                        ]),
                       GestureDetector(
                         onTap: (){
-                          _showMenu.value = true;
+                          showModalBottomSheet(context: context, builder: buildBottomSheet);
                         },
                         child: Icon(Icons.more_vert_outlined, size: 25),
                       ),
@@ -115,20 +113,15 @@ class PostPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      settingText("september14, 2021", size: 12, color: greyColor, weight: FontWeight.w500),
+                      settingText("september 14, 2021", size: 12, color: greyColor, weight: FontWeight.w500),
                     ],
                   ),
-                  SizedBox(height: 15),
+                  SizedBox(height: 20),
                   Center(
                     child: 
-                      buildBox(
-                        boxDecoration:
-                          boxDecoration(borderRadius: 20.0, boxShadow: boxShadow()),
-                        // widget:
-                        //   Row,
-                      ),
+                      buildGpsWidget("128 หมู่ 3 Chakphong, Klaeng District, Rayong 21190, Thailand")
                   ),
-                  SizedBox(height:500),
+                  SizedBox(height:300),
                 ],
               ),
             ),
@@ -179,12 +172,38 @@ class PostPage extends StatelessWidget {
           )
         : SizedBox.shrink(),
         ),
-        Obx(() =>
-        _showMenu.value
-        ? Text("hi",style:TextStyle(color: whiteColor))
-        : SizedBox.shrink()
-        ),
       ],
     );
+  }
+
+  Widget buildBottomSheet(BuildContext context)
+  {
+    final List<IconData> icons = [Icons.copy, Icons.share, Icons.report_gmailerrorred];
+    List bottomSheet = ['링크 복사','공유','신고'];
+    return 
+    ListView.separated(
+      separatorBuilder: (context, index){
+        return new Divider(color: lightGreyColor);
+      },
+      itemCount: 3,
+      itemBuilder: (context, index) {
+          return 
+            ListTile(
+              // dense: true,
+              minLeadingWidth : 20,
+              leading: 
+                Padding(
+                  padding: EdgeInsets.only(left: 5),
+                  child: Icon(icons[index])
+                ),
+              onTap: () {
+              Navigator.pop(context);
+              },
+              title: settingText(bottomSheet[index],size: 15),
+            );
+          },
+        );
+  
+      
   }
 }
