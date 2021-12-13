@@ -98,31 +98,19 @@ class HomePage extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  profileComponent(AssetImage('assets/diver.jpg'),size: 40,),
-                  SizedBox(width: 20),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      settingText('Liam', size: 16, weight: FontWeight.w600, align: TextAlign.start),
-                      settingText('photographer', size: 13, color: greyColor, align: TextAlign.start)
-                    ],
-                  )
-                ],
-              ),
+              profileName(AssetImage('assets/diver.jpg'), "Liam", "photographer"),
               SizedBox(height: 20),
               settingText("My first Diving picture!\nWhat a wonderful! XD"),
               SizedBox(height: 10),
-              displayPostPicture(image:AssetImage('assets/postSampleImage2.jpg')),
+              displayPostPicture("Thailand", AssetImage('assets/postSampleImage2.jpg')),
               SizedBox(height: 20),
               Wrap(
-              spacing: 20,
-              runSpacing: 5,
-              children: [
-                settingText("#firstDiving", size: 12, color: greyColor, weight: FontWeight.w500),
-                settingText("#underwater", size: 12, color: greyColor, weight: FontWeight.w500),
-              ],
+                spacing: 20,
+                runSpacing: 5,
+                children: [
+                  settingText("#firstDiving", size: 12, color: greyColor, weight: FontWeight.w500),
+                  settingText("#underwater", size: 12, color: greyColor, weight: FontWeight.w500),
+                ],
               ),
               SizedBox(height: 15),
               Row(
@@ -150,7 +138,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  settingText("september14, 2021", size: 12, color: greyColor, weight: FontWeight.w500),
+                  settingText("september 14, 2021", size: 12, color: greyColor, weight: FontWeight.w500),
                 ],
               )
             ],

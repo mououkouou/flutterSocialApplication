@@ -1,4 +1,5 @@
 import 'package:DiveSocialApp/Layout/boxWidgetComponent.dart';
+import 'package:DiveSocialApp/Layout/postComponent.dart';
 import 'package:DiveSocialApp/Layout/profileComponent.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -31,8 +32,9 @@ class PostPage extends StatelessWidget {
     return Stack(
       children: 
       [
-        GestureDetector(
+        InkWell(
           onTap: () {
+            
             _showDetail.value = true;
           },
           child:
@@ -43,7 +45,7 @@ class PostPage extends StatelessWidget {
               Image(
                 image: AssetImage('assets/postSampleImage2.jpg'),
                 fit: BoxFit.cover,
-              ),
+              ),  
           ),
         ),
         SingleChildScrollView(
@@ -57,19 +59,7 @@ class PostPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        children: [
-                          profileComponent(AssetImage('assets/diver.jpg'), size: 40),
-                          SizedBox(width: 20),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              settingText('Liam', size: 16, weight: FontWeight.w600, align: TextAlign.start),
-                              settingText('photographer', size: 13, color: greyColor, align: TextAlign.start)
-                            ],
-                          )
-                        ],
-                      ),
+                      profileName(AssetImage('assets/diver.jpg'), "Liam", "photographer"),
                       GestureDetector(
                         onTap: (){
                           _showMenu.value = true;
@@ -115,20 +105,15 @@ class PostPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      settingText("september14, 2021", size: 12, color: greyColor, weight: FontWeight.w500),
+                      settingText("september 14, 2021", size: 12, color: greyColor, weight: FontWeight.w500),
                     ],
                   ),
-                  SizedBox(height: 15),
+                  SizedBox(height: 20),
                   Center(
                     child: 
-                      buildBox(
-                        boxDecoration:
-                          boxDecoration(borderRadius: 20.0, boxShadow: boxShadow()),
-                        // widget:
-                        //   Row,
-                      ),
+                      buildGpsWidget("128 หมู่ 3 Chakphong, Klaeng District, Rayong 21190, Thailand")
                   ),
-                  SizedBox(height:500),
+                  SizedBox(height:300),
                 ],
               ),
             ),
