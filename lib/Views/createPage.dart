@@ -54,7 +54,7 @@ class _CreatePageState extends State<CreatePage> {
         child: _buildBody()),
     );
   }
-
+  
   Widget _buildAppBar(BuildContext context) {
     return AppBar(
       title: Image(image: AssetImage('assets/ic_arrow_back.png'),),
@@ -126,13 +126,15 @@ class _CreatePageState extends State<CreatePage> {
                               Align(
                                 alignment: Alignment.bottomLeft,
                                 child: smallFillBox
-                                  (settingText
-                                    (
-                                      '#hasTag',
-                                      color: greyColor,
-                                      size: 13,
-                                      weight: FontWeight.w600
-                                    ),
+                                  (Center(
+                                    child: settingText
+                                      (
+                                        '#hasTag',
+                                        color: greyColor,
+                                        size: 13,
+                                        weight: FontWeight.w600
+                                      ),
+                                  ),
                                     width: 95.0,
                                     height: sh4,
                                     color: brightGreyColor,
@@ -153,11 +155,13 @@ class _CreatePageState extends State<CreatePage> {
                              (
                                children: 
                                [
-                                 settingText
-                                 (
-                                   'GPS',
-                                   color: mainColor
-                                  )
+                                 Center(
+                                   child: settingText
+                                   (
+                                     'GPS',
+                                     color: mainColor
+                                    ),
+                                 )
                                ],
                               )
                            ],

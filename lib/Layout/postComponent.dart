@@ -21,22 +21,22 @@ Widget displayPostPicture(String location, AssetImage image,)
             ),
         ),
         Padding(
-          padding: EdgeInsets.only(left:20, bottom:20),
+          padding: EdgeInsets.only(left: 7, bottom: 7),
           child: 
             smallFillBox(
-            Container(
-              padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
-              child:
-                Row(
-                  mainAxisSize: MainAxisSize.min,
+              Container(
+                padding: EdgeInsets.fromLTRB(12, 5, 12, 5),
+                child:
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: 
                     [
-                      Icon(Icons.location_on_outlined, color: whiteColor,),
-                      SizedBox(width: 5),
-                      settingText(location, size:12, color: whiteColor),
+                      Icon(Icons.location_on_outlined, color: whiteColor, size: 20),
+                      SizedBox(width: 3),
+                      settingText(location, size: 11, color: whiteColor),
                     ],
-                ),
-            ),
+                  ),
+              ),
             color:defaultColor.withOpacity(0.7),
             ),
         )

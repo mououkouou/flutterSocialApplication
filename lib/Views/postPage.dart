@@ -12,7 +12,6 @@ class PostPage extends StatelessWidget {
     'nickname': 'Liam',
   };
   RxBool _showDetail = false.obs;
-  RxBool _showMenu = false.obs;
 
   @override
   Widget build(BuildContext context) {
@@ -59,10 +58,19 @@ class PostPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      profileName(AssetImage('assets/diver.jpg'), "Liam", "photographer"),
+                        profileName(AssetImage('assets/diver.jpg'), "Liam", "photographer"),
+                        Row(
+                          children: [
+                            SizedBox(width: 10),
+                            smallBorderBox(
+                              settingText("follow", color: mainColor, size: 12),
+                              color: mainColor,
+                              padding: EdgeInsets.fromLTRB(5, 2, 5, 2),
+                              radius: 20),
+                        ]),
                       GestureDetector(
                         onTap: (){
-                          _showMenu.value = true;
+                          showModalBottomSheet(context: context, builder: buildBottomSheet);
                         },
                         child: Icon(Icons.more_vert_outlined, size: 25),
                       ),
@@ -164,12 +172,38 @@ class PostPage extends StatelessWidget {
           )
         : SizedBox.shrink(),
         ),
-        Obx(() =>
-        _showMenu.value
-        ? Text("hi",style:TextStyle(color: whiteColor))
-        : SizedBox.shrink()
-        ),
       ],
     );
+  }
+
+  Widget buildBottomSheet(BuildContext context)
+  {
+    final List<IconData> icons = [Icons.copy, Icons.share, Icons.report_gmailerrorred];
+    List bottomSheet = ['링크 복사','공유','신고'];
+    return 
+    ListView.separated(
+      separatorBuilder: (context, index){
+        return new Divider(color: lightGreyColor);
+      },
+      itemCount: 3,
+      itemBuilder: (context, index) {
+          return 
+            ListTile(
+              // dense: true,
+              minLeadingWidth : 20,
+              leading: 
+                Padding(
+                  padding: EdgeInsets.only(left: 5),
+                  child: Icon(icons[index])
+                ),
+              onTap: () {
+              Navigator.pop(context);
+              },
+              title: settingText(bottomSheet[index],size: 15),
+            );
+          },
+        );
+  
+      
   }
 }
