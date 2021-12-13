@@ -56,7 +56,7 @@ Container buildBackgroundBox({Widget widget,EdgeInsets padding, EdgeInsets margi
   );
 }
 
-Container smallFillBox(Widget text,{double width, double height,Color color = whiteColor})
+Container smallFillBox(Widget widget,{double width, double height,Color color = whiteColor, double radius = 13.0})
 {
   return Container
   (
@@ -65,9 +65,9 @@ Container smallFillBox(Widget text,{double width, double height,Color color = wh
     decoration: BoxDecoration
     (
       color: color,
-      borderRadius: BorderRadius.all(Radius.circular(13))
+      borderRadius: BorderRadius.all(Radius.circular(radius))
     ),
-    child: Center(child: text),
+    child: widget,
   );
 }
 
