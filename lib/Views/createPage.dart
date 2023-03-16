@@ -4,8 +4,10 @@ import 'package:DiveSocialApp/Layout/commonComponent.dart';
 import 'package:DiveSocialApp/themeData.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:switcher_button/switcher_button.dart';
 
 class CreatePage extends StatefulWidget {
 //  final FirebaseUser user;
@@ -33,6 +35,7 @@ class _CreatePageState extends State<CreatePage> {
   }
 
   File _image;
+  RxBool _switchValue = true.obs;
 
   // 갤러리에서 사진 가져오기
   Future _getImage() async {
@@ -96,14 +99,15 @@ class _CreatePageState extends State<CreatePage> {
                     (
                       children:
                       [
-                        Container(
+                        Container
+                        (
                           padding: EdgeInsets.fromLTRB(15.0, 0, 15.0, 0),
                           height: sh20+sh5+10,
                           decoration: BoxDecoration
-                                          (
-                                            borderRadius: BorderRadius.circular(10),
-                                            border: Border.all(color: Colors.black12,width: 1.0)
-                                            ),
+                                        (
+                                          borderRadius: BorderRadius.circular(10),
+                                          border: Border.all(color: Colors.black12,width: 1.0)
+                                        ),
                           child: Column(
                             children: [
                               Container(
@@ -126,7 +130,9 @@ class _CreatePageState extends State<CreatePage> {
                               Align(
                                 alignment: Alignment.bottomLeft,
                                 child: smallFillBox
-                                  (Center(
+                                  (
+                                    Center
+                                    (
                                     child: settingText
                                       (
                                         '#hasTag',
@@ -147,27 +153,92 @@ class _CreatePageState extends State<CreatePage> {
                         SizedBox(height: sh3,),
                         smallFillBox
                         (
-                         Row
-                         (
-                           children: 
-                           [
-                             Row
-                             (
-                               children: 
-                               [
-                                 Center(
-                                   child: settingText
-                                   (
-                                     'GPS',
-                                     color: mainColor
-                                    ),
-                                 )
-                               ],
-                              )
-                           ],
-                           )
+                          Padding(
+                                   padding: EdgeInsets.all(15.0),
+                                   child: Row(
+                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                       children: [
+                                         Row(
+                                           children: [
+                                             Icon
+                                             (
+                                               Icons.room,
+                                               color: greyColor,
+                                               size: 16,
+                                               ),
+                                              SizedBox(width: 5.0,),
+                                             settingText
+                                             (
+                                               'GPS',
+                                               color: greyColor,
+                                               size: 13,
+                                               weight: FontWeight.w600
+                                              ),
+                                           ],
+                                         ),
+                                          SwitcherButton
+                                            (       
+                                              value: _switchValue.value,
+                                              offColor: greyColor,
+                                              onChange: (val)=> _switchValue.value = val
+                                            )
+                                       ],
+                                     ),
+                                 ),
+                          color: brightGreyColor
                         ),
-                        Divider(),
+                        SizedBox(height: sh3),
+                        Container
+                        (
+                          padding: EdgeInsets.fromLTRB(15.0, 0, 15.0, 0),
+                          height: sh20+sh5+10,
+                          decoration: BoxDecoration
+                                        (
+                                          borderRadius: BorderRadius.circular(10),
+                                          border: Border.all(color: Colors.black12,width: 1.0)
+                                        ),
+                          child: Column(
+                            children: [
+                              Container(
+                                height: sh20,
+                                child: TextField
+                                (
+                                maxLines: null,
+                                controller: textEditingController,
+                                decoration: InputDecoration
+                                  (
+                                    border: InputBorder.none,
+                                    hintText: 'Write content',
+                                    hintStyle: TextStyle
+                                    (
+                                      color: boxTextColor
+                                    )
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment.bottomLeft,
+                                child: smallFillBox
+                                  (
+                                    Center
+                                    (
+                                    child: settingText
+                                      (
+                                        '#hasTag',
+                                        color: greyColor,
+                                        size: 13,
+                                        weight: FontWeight.w600
+                                      ),
+                                  ),
+                                    width: 95.0,
+                                    height: sh4,
+                                    color: brightGreyColor,
+                              
+                                  ),
+                              )
+                            ],
+                          ),
+                        ),
                         ListTile(
                           leading: Text('위치 추가하기'),
                         ),

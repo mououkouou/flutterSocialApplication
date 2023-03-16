@@ -7,7 +7,7 @@ const mainColor = Color(0xFF1D315B); //연한색
 const boxTextColor = Color(0xFFD9D9D9); // 배경 main or point 사용된 박스에 들어갈 글자색
 
 const whiteColor = Color(0xFFFFFFFF);
-const brightGreyColor = Color(0xFFF0EFF0);
+const brightGreyColor = Color(0xFFEEF2F5);
 const defaultColor = Color(0xFF000000);
 const greyColor = Color(0xFF7A7A7A);
 const lightGreyColor = Color(0xFFCECECE);
